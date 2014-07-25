@@ -14,12 +14,20 @@ class GameScene < SKScene
 
     self.backgroundColor = UIColor.blackColor
 
+    # Add the star field
+    addChild StarField.node
+
     # Create the ship
     ship = SKSpriteNode.spriteNodeWithImageNamed 'Spaceship.png'
     ship.name = 'ship'
     ship.position = CGPointMake size.width / 2, size.height / 2
     ship.size = CGSizeMake 40, 40
     self.addChild ship
+
+    # path = NSBundle.mainBundle.pathForResource('thrust', ofType: 'sks')
+    # thrust = NSKeyedUnarchiver.unarchiveObjectWithFile path
+    # thrust.position = CGPointMake 0, -20
+    # ship.addChild thrust
   end
 
   def touchesBegan(touches, withEvent: event)
@@ -162,6 +170,7 @@ class GameScene < SKScene
 
   def check_collisions
     ship = childNodeWithName 'ship'
+    return unless ship
 
     enumerateChildNodesWithName('powerup', usingBlock: lambda do |powerup, stop|
       if ship.intersectsNode powerup
