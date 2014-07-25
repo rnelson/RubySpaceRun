@@ -8,6 +8,7 @@ class GameScene < SKScene
     @last_shot_fire_time = 0
     @ship_speed = 130
     @ship_fire_rate = 0.5
+    @easy_mode = false
     @random = Random.new
 
     @shoot_sound = SKAction.playSoundFileNamed('shoot.m4a', waitForCompletion: false)
@@ -30,14 +31,14 @@ class GameScene < SKScene
     thrust.position = CGPointMake 0, -20
     ship.addChild thrust
 
-    # hud_node = HUDNode.node
-    # hud_node.name = 'hud'
-    # hud_node.zPosition = 100
-    # hud_node.position = CGPointMake size.width / 2, size.height / 2
-    # addChild hud_node
-    #
-    # hud_node.layout_for_scene
-    # hud_node.start_game
+    hud_node = HUDNode.node
+    hud_node.name = 'hud'
+    hud_node.zPosition = 100
+    hud_node.position = CGPointMake size.width / 2, size.height / 2
+    addChild hud_node
+
+    hud_node.layout_for_scene
+    hud_node.start_game
 
     self
   end
@@ -219,10 +220,21 @@ class GameScene < SKScene
 
           runAction @obstacle_explode_sound
 
+          hud = childNodeWithName 'hud'
+          score = 10 * hud.elapsed_time * (@easy_mode ? 1 : 2)
+          hud.add_points score
+
           stop = true
         end
       end)
     end)
+  end
+
+  def end_game
+    # menu stuff
+
+    hud = childNodeWithName 'hud'
+    hud.end_game
   end
   
   def build_enemy_ship_movement_path
