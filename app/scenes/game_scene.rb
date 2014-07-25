@@ -26,10 +26,9 @@ class GameScene < SKScene
     ship.size = CGSizeMake 40, 40
     addChild ship
 
-    # path = NSBundle.mainBundle.pathForResource('thrust', ofType: 'sks')
-    # thrust = NSKeyedUnarchiver.unarchiveObjectWithFile path
-    # thrust.position = CGPointMake 0, -20
-    # ship.addChild thrust
+    thrust = Extensions.node_with_file 'thrust.sks'
+    thrust.position = CGPointMake 0, -20
+    ship.addChild thrust
 
     # hud_node = HUDNode.node
     # hud_node.name = 'hud'
@@ -39,6 +38,8 @@ class GameScene < SKScene
     #
     # hud_node.layout_for_scene
     # hud_node.start_game
+
+    self
   end
 
   def touchesBegan(touches, withEvent: event)
