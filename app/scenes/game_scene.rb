@@ -1,4 +1,6 @@
 class GameScene < SKScene
+  attr_accessor :end_game_callback
+
   def initWithSize(size)
     super
 
@@ -22,12 +24,21 @@ class GameScene < SKScene
     ship.name = 'ship'
     ship.position = CGPointMake size.width / 2, size.height / 2
     ship.size = CGSizeMake 40, 40
-    self.addChild ship
+    addChild ship
 
     # path = NSBundle.mainBundle.pathForResource('thrust', ofType: 'sks')
     # thrust = NSKeyedUnarchiver.unarchiveObjectWithFile path
     # thrust.position = CGPointMake 0, -20
     # ship.addChild thrust
+
+    # hud_node = HUDNode.node
+    # hud_node.name = 'hud'
+    # hud_node.zPosition = 100
+    # hud_node.position = CGPointMake size.width / 2, size.height / 2
+    # addChild hud_node
+    #
+    # hud_node.layout_for_scene
+    # hud_node.start_game
   end
 
   def touchesBegan(touches, withEvent: event)
@@ -196,6 +207,8 @@ class GameScene < SKScene
         obstacle.removeFromParent
 
         runAction @ship_explode_sound
+
+        end_game_callback() if not end_game_callback.nil?
       end
 
       enumerateChildNodesWithName('photon', usingBlock: lambda do |photon, stop|

@@ -9,7 +9,7 @@ rescue LoadError
 end
 
 Motion::Project::App.setup do |app|
-  app.name = 'RubySpaceRun'
+  app.name = 'Space Run'
   app.identifier = 'org.pretendamazing.RubySpaceRun'
   app.frameworks += ['SpriteKit']
 
