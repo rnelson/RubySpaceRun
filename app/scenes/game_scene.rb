@@ -8,6 +8,8 @@ class GameScene < SKScene
 
     @last_update_time = 0
     @last_shot_fire_time = 0
+    @ship_explode_template = SKEmitterNode.nodeWithFile 'shipExplode.sks'
+    @obstacle_explode_template = SKEmitterNode.nodeWithFile 'obstacleExplode.sks'
     @ship_speed = 130
     @ship_fire_rate = 0.5
     @random = Random.new
@@ -29,7 +31,7 @@ class GameScene < SKScene
     ship.size = CGSizeMake 40, 40
     addChild ship
 
-    thrust = Extensions.node_with_file 'thrust.sks'
+    thrust = SKEmitterNode.nodeWithFile 'thrust.sks'
     thrust.position = CGPointMake 0, -20
     ship.addChild thrust
 
@@ -221,6 +223,11 @@ class GameScene < SKScene
 
         runAction @ship_explode_sound
 
+        explosion = @ship_explode_template.copy
+        explosion.position = ship.position
+        explosion.dieOutInDuration 0.3
+        addChild explosion
+
         end_game
       end
 
@@ -234,6 +241,11 @@ class GameScene < SKScene
           hud = childNodeWithName 'hud'
           score = 10 * hud.elapsed_time * (@easy_mode ? 1 : 2)
           hud.add_points score
+
+          explosion = @obstacle_explode_template.copy
+          explosion.position = obstacle.position
+          explosion.dieOutInDuration 0.1
+          addChild explosion
 
           stop = true
         end
