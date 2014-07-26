@@ -9,6 +9,8 @@ class HUDNode < SKNode
 
     @elapsed_time = 0.0
     @score = 0
+
+    self
   end
 
   def layout_for_scene
@@ -80,7 +82,7 @@ class HUDNode < SKNode
     @score += points
 
     score_value = childNodeWithName 'scoreGroup/scoreValue'
-    score_value.text = @score.to_s
+    score_value.text = @score.to_i.to_s
 
     scale = SKAction.scaleTo(1.1, duration: 0.02)
     shrink = SKAction.scaleTo(1, duration: 0.07)
@@ -89,15 +91,15 @@ class HUDNode < SKNode
   end
 
   def start_game
-    start_time = NSDate.dateWithTimeIntervalSinceReferenceDate
-    elapsed_value = childNodeWithName 'timeGroup/elapsedValue'
+    start_time = NSDate.timeIntervalSinceReferenceDate
+    elapsed_value = childNodeWithName 'timeGroup/elapsedTimeValue'
     
     weak_self = WeakRef.new self
     update = SKAction.runBlock(lambda do
-      now = NSDate.dateWithTimeIntervalSinceReferenceDate
+      now = NSDate.timeIntervalSinceReferenceDate
       elapsed = now - start_time
       weak_self.elapsed_time = elapsed
-      elapsed_value.text = elapsed.to_s
+      elapsed_value.text = elapsed.round(0).to_s
     end)
     
     delay = SKAction.waitForDuration 0.05

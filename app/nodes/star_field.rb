@@ -13,6 +13,8 @@ class StarField < SKNode
     delay = SKAction.waitForDuration 0.01
     loop = SKAction.sequence [delay, update]
     runAction SKAction.repeatActionForever loop
+
+    self
   end
 
   def launch_star
