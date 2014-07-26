@@ -9,7 +9,6 @@ class GameScene < SKScene
     @last_shot_fire_time = 0
     @ship_speed = 130
     @ship_fire_rate = 0.5
-    @easy_mode = false
     @random = Random.new
     @end_game_callback =
 
@@ -17,7 +16,7 @@ class GameScene < SKScene
     @ship_explode_sound = SKAction.playSoundFileNamed('obstacleExplode.m4a', waitForCompletion: false)
     @obstacle_explode_sound = SKAction.playSoundFileNamed('shipExplode.m4a', waitForCompletion: false)
 
-    self.backgroundColor = UIColor.blackColor
+    backgroundColor = UIColor.blackColor
 
     # Add the star field
     addChild StarField.node
@@ -62,7 +61,13 @@ class GameScene < SKScene
       end
     end
 
-    if @random.rand(1000) <= 15
+    if @easy_mode
+      thing_probability = 15
+    else
+      thing_probability = 30
+    end
+
+    if @random.rand(1000) <= thing_probability
       drop_thing
     end
     

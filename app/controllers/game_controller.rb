@@ -20,7 +20,7 @@ class GameController < UIViewController
     unless self.view.scene
       scene = GameScene.alloc.initWithSize(view.bounds.size)
       scene.scaleMode = SKSceneScaleModeAspectFill
-
+      scene.easy_mode = @easy_mode
       weak_self = WeakRef.new self
       scene.end_game_callback = lambda { weak_self.navigationController.popViewControllerAnimated true }
 
