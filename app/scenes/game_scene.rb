@@ -246,9 +246,7 @@ class GameScene < SKScene
     hud = childNodeWithName 'hud'
     hud.end_game
 
-    defaults = NSUserDefaults.standardUserDefaults
-    high_score = defaults.valueForKey 'highScore'
-    defaults.setValue(hud.score, forKey: 'highScore') if high_score.to_i < hud.score
+    NSUserDefaults[:high_score] = hud.score if NSUserDefaults[:high_score] < hud.score
   end
   
   def build_enemy_ship_movement_path
