@@ -18,3 +18,4 @@ nbproject
 
 #ignore the ib gem generated xcodeproject
 ib.xcodeproj/*
+vendor/*/build-*
