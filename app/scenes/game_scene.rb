@@ -1,6 +1,7 @@
 class GameScene < SKScene
   attr_accessor :end_game_callback
   attr_accessor :easy_mode
+  attr_accessor :tap_gesture
 
   def initWithSize(size)
     super
@@ -241,17 +242,24 @@ class GameScene < SKScene
   end
 
   def end_game
-    # menu stuff
-    if self.end_game_callback.nil?
-      puts 'Forgot to set the end_game_callback'
-    else
-      @end_game_callback.call
-    end
+    @tap_gesture = UITapGestureRecognizer.alloc.initWithTarget(self, action: 'tapped')
+    view.addGestureRecognizer @tap_gesture
+    node = GameOver.node
+    node.position = CGPointMake size.width / 2, size.height / 2
+    addChild node
 
     hud = childNodeWithName 'hud'
     hud.end_game
 
     NSUserDefaults[:high_score] = hud.score if NSUserDefaults[:high_score] < hud.score
+  end
+
+  def tapped
+    if @end_game_callback.nil?
+      puts 'Forgot to set the end game callback'
+    else
+      @end_game_callback.call
+    end
   end
   
   def build_enemy_ship_movement_path
@@ -269,6 +277,11 @@ class GameScene < SKScene
     path.addCurveToPoint CGPointMake(-2.5, -644.5), controlPoint1: CGPointMake(-5.2, -578.93), controlPoint2: CGPointMake(-2.5, -644.5)
 
     path.CGPath
+  end
+
+  def willMoveFromView
+    view.removeGestureRecognizer @tap_gesture
+    @tap_gesture = nil
   end
 
   ## Helpers
