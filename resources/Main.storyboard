@@ -43,7 +43,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LVB-YS-i5n" kind="push" id="aSF-gq-XsH"/>
+                                    <segue destination="LVB-YS-i5n" kind="push" identifier="PlayGame" id="aSF-gq-XsH"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KkN-OK-jkD">
@@ -76,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RhF-2X-1SF"/>
+                    <connections>
+                        <outlet property="difficulty_chooser" destination="KkN-OK-jkD" id="elb-ug-pBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWc-wm-WB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
