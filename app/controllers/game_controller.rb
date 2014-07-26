@@ -1,4 +1,6 @@
 class GameController < UIViewController
+  attr_accessor :easy_mode
+
   def loadView
     view = SKView.new
     view.showsFPS = true
