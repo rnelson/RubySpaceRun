@@ -11,6 +11,7 @@ class GameScene < SKScene
     @ship_fire_rate = 0.5
     @easy_mode = false
     @random = Random.new
+    @end_game_callback =
 
     @shoot_sound = SKAction.playSoundFileNamed('shoot.m4a', waitForCompletion: false)
     @ship_explode_sound = SKAction.playSoundFileNamed('obstacleExplode.m4a', waitForCompletion: false)
@@ -211,7 +212,7 @@ class GameScene < SKScene
 
         runAction @ship_explode_sound
 
-        end_game_callback() if not end_game_callback.nil?
+        end_game
       end
 
       enumerateChildNodesWithName('photon', usingBlock: lambda do |photon, stop|
@@ -233,6 +234,11 @@ class GameScene < SKScene
 
   def end_game
     # menu stuff
+    if self.end_game_callback.nil?
+      puts 'Forgot to set the end_game_callback'
+    else
+      @end_game_callback.call
+    end
 
     hud = childNodeWithName 'hud'
     hud.end_game
@@ -254,7 +260,6 @@ class GameScene < SKScene
 
     path.CGPath
   end
-
 
   ## Helpers
   def sqrt(x)
