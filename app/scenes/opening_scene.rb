@@ -5,9 +5,6 @@ class OpeningScene < SKScene
   attr_accessor :tap_gesture
 
   def didMoveToView(view)
-    #I can't access the C macro M_PI so I'm using this for now...
-    my_pi = 3.14159265358979323846264338327950288
-
     star_field = StarField.node
     addChild star_field
 
@@ -20,7 +17,7 @@ class OpeningScene < SKScene
     #tilt the superview
     transform = CATransform3DIdentity
     transform.m34 = -1.0 / 500.0
-    transform = CATransform3DRotate(transform, 45.0 * my_pi / 180.0, 1.0, 0.0, 0.0)
+    transform = CATransform3DRotate(transform, 45.0 * Math::PI / 180.0, 1.0, 0.0, 0.0)
     @slanted_view.layer.setTransform transform
 
     # use a textview to display our backstory
