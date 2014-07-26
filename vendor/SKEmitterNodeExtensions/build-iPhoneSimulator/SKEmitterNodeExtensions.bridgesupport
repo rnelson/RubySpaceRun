@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name='SKEmitterNode'>
+<method selector='dieOutInDuration:'>
+<arg declared_type='NSTimeInterval' index='0' name='duration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='nodeWithFile:'>
+<arg declared_type='NSString*' index='0' name='filename' type='@'/>
+<retval declared_type='SKEmitterNode*' type='@'/>
+</method>
+</class>
+</signatures>

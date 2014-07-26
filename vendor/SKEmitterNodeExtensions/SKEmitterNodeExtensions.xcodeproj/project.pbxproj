@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BB539FC1983D33F00C1301E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB539FB1983D33F00C1301E /* Foundation.framework */; };
+		5BB53A011983D33F00C1301E /* SKEmitterNodeExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BB53A001983D33F00C1301E /* SKEmitterNodeExtensions.h */; };
+		5BB53A031983D33F00C1301E /* SKEmitterNodeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB53A021983D33F00C1301E /* SKEmitterNodeExtensions.m */; };
+		5BB53A221983D37F00C1301E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB53A211983D37F00C1301E /* SpriteKit.framework */; };
+		5BB53A241983D5FD00C1301E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB53A231983D5FD00C1301E /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BB539F61983D33F00C1301E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				5BB53A011983D33F00C1301E /* SKEmitterNodeExtensions.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5BB539F81983D33F00C1301E /* libSKEmitterNodeExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSKEmitterNodeExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB539FB1983D33F00C1301E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5BB539FF1983D33F00C1301E /* SKEmitterNodeExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNodeExtensions-Prefix.pch"; sourceTree = "<group>"; };
+		5BB53A001983D33F00C1301E /* SKEmitterNodeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEmitterNodeExtensions.h; sourceTree = "<group>"; };
+		5BB53A021983D33F00C1301E /* SKEmitterNodeExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEmitterNodeExtensions.m; sourceTree = "<group>"; };
+		5BB53A211983D37F00C1301E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		5BB53A231983D5FD00C1301E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BB539F51983D33F00C1301E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB53A241983D5FD00C1301E /* UIKit.framework in Frameworks */,
+				5BB53A221983D37F00C1301E /* SpriteKit.framework in Frameworks */,
+				5BB539FC1983D33F00C1301E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BB539EF1983D33F00C1301E = {
+			isa = PBXGroup;
+			children = (
+				5BB539FD1983D33F00C1301E /* SKEmitterNodeExtensions */,
+				5BB539FA1983D33F00C1301E /* Frameworks */,
+				5BB539F91983D33F00C1301E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BB539F91983D33F00C1301E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BB539F81983D33F00C1301E /* libSKEmitterNodeExtensions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BB539FA1983D33F00C1301E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BB53A231983D5FD00C1301E /* UIKit.framework */,
+				5BB53A211983D37F00C1301E /* SpriteKit.framework */,
+				5BB539FB1983D33F00C1301E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BB539FD1983D33F00C1301E /* SKEmitterNodeExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BB53A001983D33F00C1301E /* SKEmitterNodeExtensions.h */,
+				5BB53A021983D33F00C1301E /* SKEmitterNodeExtensions.m */,
+				5BB539FE1983D33F00C1301E /* Supporting Files */,
+			);
+			path = SKEmitterNodeExtensions;
+			sourceTree = "<group>";
+		};
+		5BB539FE1983D33F00C1301E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BB539FF1983D33F00C1301E /* SKEmitterNodeExtensions-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BB539F71983D33F00C1301E /* SKEmitterNodeExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB53A1B1983D33F00C1301E /* Build configuration list for PBXNativeTarget "SKEmitterNodeExtensions" */;
+			buildPhases = (
+				5BB539F41983D33F00C1301E /* Sources */,
+				5BB539F51983D33F00C1301E /* Frameworks */,
+				5BB539F61983D33F00C1301E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKEmitterNodeExtensions;
+			productName = SKEmitterNodeExtensions;
+			productReference = 5BB539F81983D33F00C1301E /* libSKEmitterNodeExtensions.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BB539F01983D33F00C1301E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ross Nelson";
+			};
+			buildConfigurationList = 5BB539F31983D33F00C1301E /* Build configuration list for PBXProject "SKEmitterNodeExtensions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5BB539EF1983D33F00C1301E;
+			productRefGroup = 5BB539F91983D33F00C1301E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BB539F71983D33F00C1301E /* SKEmitterNodeExtensions */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BB539F41983D33F00C1301E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB53A031983D33F00C1301E /* SKEmitterNodeExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5BB53A191983D33F00C1301E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5BB53A1A1983D33F00C1301E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BB53A1C1983D33F00C1301E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SKEmitterNodeExtensions.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKEmitterNodeExtensions/SKEmitterNodeExtensions-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5BB53A1D1983D33F00C1301E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SKEmitterNodeExtensions.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKEmitterNodeExtensions/SKEmitterNodeExtensions-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BB539F31983D33F00C1301E /* Build configuration list for PBXProject "SKEmitterNodeExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB53A191983D33F00C1301E /* Debug */,
+				5BB53A1A1983D33F00C1301E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB53A1B1983D33F00C1301E /* Build configuration list for PBXNativeTarget "SKEmitterNodeExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB53A1C1983D33F00C1301E /* Debug */,
+				5BB53A1D1983D33F00C1301E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BB539F01983D33F00C1301E /* Project object */;
+}
