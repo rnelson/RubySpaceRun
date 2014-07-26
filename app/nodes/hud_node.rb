@@ -1,5 +1,6 @@
 class HUDNode < SKNode
   attr_accessor :elapsed_time
+  attr_accessor :score
   
   def init
     super
