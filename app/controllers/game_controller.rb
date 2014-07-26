@@ -3,10 +3,6 @@ class GameController < UIViewController
 
   def loadView
     view = SKView.new
-    view.showsFPS = true
-    view.showsNodeCount = true
-    view.showsDrawCount = true
-
     self.view = view
   end
 
@@ -14,17 +10,34 @@ class GameController < UIViewController
     true
   end
 
-  def viewWillLayoutSubviews
+  def viewDidLoad
     super
 
-    unless self.view.scene
+    view.showsFPS = true
+    view.showsNodeCount = true
+    view.showsDrawCount = true
+    black_scene = SKScene.alloc.initWithSize view.bounds.size
+    black_scene.backgroundColor = UIColor.blackColor
+    view.presentScene black_scene
+  end
+
+
+  def viewDidAppear(animated)
+    super animated
+
+    scene = OpeningScene.sceneWithSize view.bounds.size
+    scene.scaleMode = SKSceneScaleModeAspectFill
+    transition = SKTransition.fadeWithDuration 1
+    view.presentScene(scene, transition: transition)
+
+    weak_self = WeakRef.new(self)
+    scene.scene_end_callback = lambda do
       scene = GameScene.alloc.initWithSize(view.bounds.size)
       scene.scaleMode = SKSceneScaleModeAspectFill
       scene.easy_mode = @easy_mode
-      weak_self = WeakRef.new self
       scene.end_game_callback = lambda { weak_self.navigationController.popViewControllerAnimated true }
-
-      view.presentScene scene
+      transition = SKTransition.fadeWithColor(UIColor.blackColor, duration: 1)
+      view.presentScene(scene, transition: transition)
     end
   end
 end
