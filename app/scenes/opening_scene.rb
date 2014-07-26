@@ -2,6 +2,7 @@ class OpeningScene < SKScene
   attr_accessor :scene_end_callback
   attr_accessor :slanted_view
   attr_accessor :text_view
+  attr_accessor :tap_gesture
 
   def didMoveToView(view)
     #I can't access the C macro M_PI so I'm using this for now...
@@ -54,17 +55,32 @@ class OpeningScene < SKScene
                                    @text_view.center = CGPointMake(size.width / 2, 0 - (size.height / 2))
                                end,
                                completion: lambda do |finished|
-                                 if @scene_end_callback.nil?
-                                   puts 'Scene end callback not set'
-                                 else
-                                   @scene_end_callback.call
-                                   end
+                                 end_scene if finished
                                end)
+
+    view.userInteractionEnabled = true
+    @tap_gesture = UITapGestureRecognizer.alloc.initWithTarget(self, action: 'end_scene')
+    view.addGestureRecognizer @tap_gesture
   end
 
   def willMoveFromView(view)
+    view.removeGestureRecognizer @tap_gesture
+    @tap_gesture = nil
+
     @slanted_view.removeFromSuperview
     @slanted_view = nil
     @text_view = nil
+  end
+
+  def end_scene
+    UIView.animateWithDuration(0.3, animations: lambda { @text_view.alpha = 0 }, completion: lambda do |finished|
+      @text_view.layer.removeAllAnimations
+
+      if @scene_end_callback.nil?
+        puts 'Scene end callback not set'
+      else
+        @scene_end_callback.call
+      end
+    end)
   end
 end
