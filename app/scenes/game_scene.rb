@@ -188,6 +188,9 @@ class GameScene < SKScene
 
     enumerateChildNodesWithName('powerup', usingBlock: lambda do |powerup, stop|
       if ship.intersectsNode powerup
+        hud = childNodeWithName 'hud'
+        hud.show_powerup_timer 5
+
         powerup.removeFromParent
         @ship_fire_rate = 0.1
 
@@ -236,6 +239,10 @@ class GameScene < SKScene
 
     hud = childNodeWithName 'hud'
     hud.end_game
+
+    defaults = NSUserDefaults.standardUserDefaults
+    high_score = defaults.valueForKey 'highScore'
+    defaults.setValue(hud.score, forKey: 'highScore') if high_score.to_i < hud.score
   end
   
   def build_enemy_ship_movement_path
