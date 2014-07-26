@@ -13,9 +13,9 @@ class GameController < UIViewController
   def viewDidLoad
     super
 
-    view.showsFPS = true
-    view.showsNodeCount = true
-    view.showsDrawCount = true
+    # view.showsFPS = true
+    # view.showsNodeCount = true
+    # view.showsDrawCount = true
     black_scene = SKScene.alloc.initWithSize view.bounds.size
     black_scene.backgroundColor = UIColor.blackColor
     view.presentScene black_scene
