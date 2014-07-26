@@ -19,3 +19,4 @@ nbproject
 #ignore the ib gem generated xcodeproject
 ib.xcodeproj/*
 vendor/*/build-*
+vendor/*/*.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
