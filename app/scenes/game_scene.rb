@@ -1,5 +1,6 @@
 class GameScene < SKScene
   attr_accessor :end_game_callback
+  attr_accessor :easy_mode
 
   def initWithSize(size)
     super
